@@ -1,0 +1,225 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>David Margalef – CV</title>
+  <meta name="description" content="CV online de David Margalef: desarrollador junior con experiencia en .NET, datos (Dagster, Trino, Iceberg) y arquitectura Lakehouse." />
+  <!-- Tailwind via CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="icon" href="/favicon.ico" />
+  <!-- Tipografía similar a Euge Oller (Playfair Display + Inter) -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-[#f5f5dc] text-[#3d2b1f]">
+  <!-- New Sticky Header -->
+  <header id="sticky-header">
+    <a href="#top">
+
+      <img src="res/img/logo_DM.png" alt="Logo" style="height:2.5rem; border-radius: 50%;" />
+    </a>
+    <nav>
+      <a href="#sobre-mi">Sobre mí</a>
+      <a href="#proyectos">Proyectos</a>
+    </nav>
+  </header>
+
+  <!-- Hero -->
+  <header class="hero hero-spotlight">
+    <div class="hero-inner">
+      <div class="hero-copy">
+        <h1 class="hero-title">David Margalef</h1>
+        <p class="hero-subtitle">Desarrollador Junior · Back-End .NET / BBDD</p>
+        <p class="hero-description">
+          Experiencia en APIs REST con .NET, pipelines de datos (Dagster, Trino) y arquitectura Lakehouse
+          (Iceberg, MinIO). Aprendizaje rápido, comunicación clara y foco en impacto real.
+        </p>
+        <div class="hero-buttons">
+          <a href="#sobre-mi" class="btn-primary">Sobre mí</a>
+          <a href="#proyectos" class="btn-secondary">Proyectos</a>
+        </div>
+      </div>
+  
+      <div class="hero-image">
+        <div class="hero-card">
+          <img src="res/img/nobg.png" alt="David Margalef" class="profile-hero" />
+        </div>
+      </div>
+    </div>
+  </header>
+  
+
+  <!-- Sobre mí -->
+  <section id="sobre-mi" class="max-w-4xl mx-auto py-20 px-6">
+    <h2 class="text-3xl font-bold mb-6">Sobre mí</h2>
+    <p class="leading-relaxed text-[#4a4a4a]">Me gusta improvisar en la vida, aunque cuando se trata de algo serio prefiero tenerlo ordenado y estructurado. Soy tranquilo, paciente y social: casi siempre organizo los planes con mis amigos y nunca digo que no a un café o a una birra improvisada. Tengo un hermano mayor y dos perros pequeños que siempre me hacen sonreír. Desde pequeño jugué a fútbol, y ahí aprendí a trabajar en equipo y a no frustrarme cuando yo o alguien se equivoque. Disfruto de lo simple: conducir con música, jugar a videojuegos o ir al gimnasio (aunque me de pereza). Soy empático, sincero y con humor. </p>
+    <p class="mt-4 leading-relaxed text-[#4a4a4a]">
+
+      Yo no pensaba dedicarme a la programación. Hice el bachillerato tecnológico con la idea de estudiar ingeniería química y llegué a empezar la carrera, pero vi que no era lo mío. Pasé un tiempo sin rumbo hasta que me apunté al ciclo de DAM, y desde el primer día me enganché a la programación: me gustaba, se me daba bien y sentía que era mi sitio.
+      
+      En el ciclo aprendí Java, SQL, HTML y CSS, y más tarde .NET y Kotlin. Durante mis pracricas en <a href="https://www.pisos.com" class="font-semibold text-[#3d2b1f]/80 hover:text-black" target="_blank">pisos.com</a>  aprendí .NET desde cero y trabajé con herramientas profesionales como Dagster, Looker Studio o BigQuery. También participé en un proyecto de arquitectura Lakehouse con Dagster, Trino, Iceberg y dbt, y trabajé mucho con Python, SQL y APIs REST. Fue un año intenso en el que aprendí a adaptarme rápido a lo desconocido, con la ayuda de los mejores mentores: Jokin y Carlos. </p>
+    <p class="mt-4 leading-relaxed text-[#4a4a4a]">
+      
+      Hoy sigo con ganas de aprender y de explorar distintos caminos: me atraen los datos, la inteligencia artificial, las APIs y también entender la parte de negocio detrás de los proyectos, desde su impacto real hasta cómo se convierten en valor.</p>
+  </section>
+
+  <!-- Proyectos -->
+  <section id="proyectos" class="py-20 px-6">
+    <div class="max-w-5xl mx-auto">
+      <h2 class="text-3xl font-bold mb-10">Proyectos</h2>
+      <div class="grid md:grid-cols-2 gap-8">
+        <article class="bg-white rounded-xl p-6 shadow hover:shadow-lg transition">
+          <h3 class="text-xl font-semibold">API de Notas (.NET)</h3>
+          <p class="mt-2 text-sm text-[#4a4a4a]">API REST con autenticación JWT y tests automatizados. Desplegada en Render.</p>
+          <a href="#" class="mt-3 inline-block underline text-sm">Ver en GitHub</a>
+        </article>
+        <article class="bg-white rounded-xl p-6 shadow hover:shadow-lg transition">
+          <h3 class="text-xl font-semibold">Pipeline ETL (Dagster + Trino)</h3>
+          <p class="mt-2 text-sm text-[#4a4a4a]">Ingesta, transformación y métricas en Lakehouse con Apache Iceberg.</p>
+          <a href="#" class="mt-3 inline-block underline text-sm">Ver en GitHub</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contacto -->
+  <section id="contacto" class="max-w-4xl mx-auto py-20 px-6">
+    <h2 class="text-3xl font-bold mb-6">¡Contacta conmigo!</h2>
+    <p class="text-[#4a4a4a] mb-6">¿Quieres hablar conmigo? Rellena este formulario.</p>
+    <form action="https://formspree.io/f/tu-endpoint" method="POST" class="grid gap-4">
+      <input type="text" name="nombre" placeholder="Tu nombre" class="border rounded-md px-4 py-2" required>
+      <input type="email" name="email" placeholder="Tu email" class="border rounded-md px-4 py-2" required>
+      <textarea name="mensaje" rows="4" placeholder="Escribe tu mensaje" class="border rounded-md px-4 py-2" required></textarea>
+      <button class="bg-[#3d2b1f] text-[#f5f5dc] px-6 py-2 rounded-md shadow hover:opacity-90">Enviar</button>
+    </form>
+    <div class="mt-6 flex gap-12 justify-around">
+      <a href="https://www.linkedin.com/in/dmargalef" target="_blank" aria-label="LinkedIn">
+        <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="currentColor" class="text-[#0A66C2] hover:text-black transition" viewBox="0 0 16 16">
+          <path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 
+            16 1.146v13.708c0 .633-.526 1.146-1.175 
+            1.146H1.175C.526 16 0 15.487 0 
+            14.854V1.146zM4.943 13.403V6.169H2.542v7.234h2.401zm-1.2-8.229c.837 
+            0 1.358-.554 1.358-1.248-.015-.71-.52-1.248-1.342-1.248C3.94 
+            2.678 3.4 3.216 3.4 3.926c0 .694.52 1.248 
+            1.327 1.248h.016zm4.908 8.229h2.401V9.359c0-.216.016-.432.08-.586.175-.432.573-.878 
+            1.243-.878.876 0 1.228.662 1.228 1.634v3.874h2.4V9.25c0-2.22-1.184-3.252-2.764-3.252-1.28 
+            0-1.845.71-2.165 1.202h.032V6.169H8.651c.03.678 0 7.234 0 7.234z"/>
+        </svg>
+      </a>
+    
+      <!-- GitHub -->
+      <a href="https://github.com/dmargalef11" target="_blank" aria-label="GitHub">
+        <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="currentColor" class="text-black hover:text-gray-700 transition" viewBox="0 0 16 16">
+          <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 
+            2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 
+            0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 
+            1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 
+            0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 
+            0 0 .67-.21 2.2.82a7.65 7.65 0 0 1 2-.27c.68 0 
+            1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 
+            1.1.16 1.92.08 2.12.51.56.82 1.27.82 
+            2.15 0 3.07-1.87 3.75-3.65 
+            3.95.29.25.54.73.54 1.48 0 1.07-.01 
+            1.93-.01 2.2 0 .21.15.46.55.38A8.013 
+            8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"/>
+        </svg>
+      </a>
+      
+      
+        <!-- Instagram -->
+        <a href="https://www.instagram.com/dmargalef_" target="_blank" aria-label="Instagram">
+          <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="currentColor" class="text-pink-600 hover:text-black transition" viewBox="0 0 16 16">
+            <path d="M8 0C5.8 0 5.556.01 4.703.048c-.852.04-1.436.176-1.947.375a3.92 
+              3.92 0 0 0-1.437.936 3.92 3.92 0 0 
+              0-.936 1.437c-.199.511-.335 1.095-.375 
+              1.947C.01 5.556 0 5.8 0 
+              8s.01 2.444.048 3.297c.04.852.176 1.436.375 
+              1.947.199.511.46.957.936 
+              1.437.48.477.926.737 1.437.936.511.199 
+              1.095.335 1.947.375C5.556 15.99 5.8 
+              16 8 16s2.444-.01 3.297-.048c.852-.04 
+              1.436-.176 1.947-.375a3.92 3.92 0 0 
+              0 1.437-.936 3.92 3.92 0 0 
+              0 .936-1.437c.199-.511.335-1.095.375-1.947C15.99 
+              10.444 16 10.2 16 
+              8s-.01-2.444-.048-3.297c-.04-.852-.176-1.436-.375-1.947a3.92 
+              3.92 0 0 0-.936-1.437A3.92 3.92 0 0 
+              0 13.244.423c-.511-.199-1.095-.335-1.947-.375C10.444.01 
+              10.2 0 8 
+              0zm0 1.44c2.17 0 2.424.008 
+              3.276.047.788.037 1.216.166 
+              1.498.276.377.146.646.319.93.603.284.284.457.553.603.93.11.282.239.71.276 
+              1.498.039.852.047 1.106.047 
+              3.276s-.008 2.424-.047 
+              3.276c-.037.788-.166 1.216-.276 
+              1.498a2.48 2.48 0 0 
+              1-.603.93 2.48 2.48 0 0 
+              1-.93.603c-.282.11-.71.239-1.498.276-.852.039-1.106.047-3.276.047s-2.424-.008-3.276-.047c-.788-.037-1.216-.166-1.498-.276a2.48 
+              2.48 0 0 1-.93-.603 2.48 2.48 0 0 
+              1-.603-.93c-.11-.282-.239-.71-.276-1.498C1.448 
+              10.424 1.44 10.17 1.44 
+              8s.008-2.424.047-3.276c.037-.788.166-1.216.276-1.498.146-.377.319-.646.603-.93.284-.284.553-.457.93-.603.282-.11.71-.239 
+              1.498-.276.852-.039 1.106-.047 3.276-.047zm0 
+              2.162a4.398 4.398 0 1 0 0 8.796 4.398 4.398 0 0 
+              0 0-8.796zm0 7.257a2.859 2.859 0 1 1 0-5.718 2.859 
+              2.859 0 0 1 0 5.718zm5.438-7.897a1.02 1.02 0 1 1-2.04 
+              0 1.02 1.02 0 0 1 2.04 0z"/>
+          </svg>
+        </a>
+      
+        <!-- X (Twitter) -->
+        <a href="https://x.com/dmargalef_" target="_blank" aria-label="Twitter/X">
+          <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="currentColor" class="text-black hover:text-gray-700 transition" viewBox="0 0 24 24">
+            <path d="M18.244 2.25h3.308l-7.227 
+              8.26 8.502 11.24H16.56l-5.357-7.02-6.125 
+              7.02H1.77l7.73-8.856L1.35 
+              2.25H8.1l4.8 6.3 5.344-6.3z"/>
+          </svg>
+        </a>
+      
+        <!-- WhatsApp -->
+        <a href="https://wa.me/34695075296" target="_blank" aria-label="WhatsApp">
+          <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="currentColor" class="text-green-500 hover:text-black transition" viewBox="0 0 16 16">
+            <path d="M13.601 2.326A7.854 7.854 0 0 
+              0 8.004.168a7.925 7.925 0 0 0-6.82 
+              11.882L.165 15.838l3.858-1.01a7.928 
+              7.928 0 0 0 11.913-6.794 7.884 
+              7.884 0 0 0-2.335-5.708zM8.004 
+              14.58a6.575 6.575 0 0 
+              1-3.356-.92l-.24-.144-2.288.6.61-2.229-.156-.229a6.56 
+              6.56 0 0 1-1.01-3.515c0-3.626 
+              2.957-6.584 6.62-6.584 1.77 0 
+              3.431.687 4.683 1.933a6.537 6.537 0 0 
+              1 1.938 4.67c0 3.627-2.957 
+              6.584-6.621 
+              6.584zm3.61-4.935c-.197-.099-1.167-.577-1.348-.642-.18-.066-.312-.099-.443.099-.131.197-.506.642-.62.774-.115.132-.23.148-.427.05-.197-.099-.832-.307-1.586-.979a5.93 
+              5.93 0 0 1-1.096-1.338c-.115-.197-.012-.304.086-.403.089-.088.197-.23.295-.345.099-.115.132-.197.197-.33.066-.132.033-.248-.016-.347-.05-.099-.443-1.07-.607-1.465-.16-.38-.323-.328-.443-.334-.115-.006-.248-.007-.38-.007a.73.73 
+              0 0 0-.53.248c-.18.197-.693.678-.693 
+              1.653s.71 1.917.81 2.049c.099.132 
+              1.402 2.14 3.397 3.002.476.205.846.327 
+              1.135.418.477.152.91.131 
+              1.252.08.382-.057 1.167-.477 
+              1.333-.94.164-.464.164-.861.115-.94-.049-.082-.18-.131-.377-.23z"/>
+          </svg>
+        </a>
+    </div>
+  </section>
+
+  <footer class="text-center py-8 text-sm text-[#4a4a4a] bg-[#ede8e1]">
+    © <span id="y"></span> David Margalef · <a href="mailto:david.margalef.pardos@gmail.com" class="underline">david.margalef.pardos@gmail.com</a>
+  </footer>
+
+  <script>document.getElementById('y').textContent = new Date().getFullYear()</script>
+  <script>
+    const stickyHeader = document.getElementById("sticky-header");
+    window.addEventListener("scroll", function() {
+      if(window.scrollY > 500) { // adjust threshold as needed
+        stickyHeader.classList.add("visible");
+      } else {
+        stickyHeader.classList.remove("visible");
+      }
+    });
+  </script>
+</body>
+</html>
