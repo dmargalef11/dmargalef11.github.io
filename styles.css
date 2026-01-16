@@ -43,10 +43,11 @@ body {
 
 
 .profile-hero {
-  position: relative;      /* ya no absolute */
-  top: -3rem;              /* sobresale por arriba */
-  width: auto;
-  max-height: 130%;        /* más grande que la card */
+  position: relative;
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 1rem;
 }
 
 /* Textos */
@@ -193,23 +194,16 @@ background-color: #ede8e1;
 }
 
 
-/* Tarjeta / marco oscuro para la foto (estilo Euge) */
+/* Tarjeta / marco para la foto */
 .hero-card {
-  background: #f2f2f2;            /* gris claro, puedes ajustarlo */
+  background: transparent;
   border-radius: 1rem;
-  padding-top: 6rem;              /* espacio superior para que sobresalga la cabeza */
-  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+  overflow: hidden;
   position: relative;
-  overflow: hidden;               /* recorta la parte de abajo de la imagen */
-  max-width: 18rem;               /* más estrecha */
-  height: 24rem;                  /* define la altura fija */
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+  max-width: 20rem;
   margin-left: auto;
-  display: flex;
-  align-items: flex-end;          /* la imagen se alinea abajo y se recorta */
-  justify-content: center;
 }
-
-
 
 /* Halo sutil detrás (spotlight) */
 .hero-card::before {
@@ -219,6 +213,7 @@ background-color: #ede8e1;
   height: 70%;
   background: radial-gradient(60% 60% at 60% 30%, rgba(255,255,255,0.06), transparent 60%);
   pointer-events: none;
+  z-index: 1;
 }
 
 
