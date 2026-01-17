@@ -171,6 +171,15 @@ background-color: #ede8e1;
 .max-w-4xl { max-width: 1200px !important; }
 .max-w-5xl { max-width: 1400px !important; }
 
+/* ============ Contact Form ============ */
+.contact-form { display: grid; gap: 1rem; }
+.form-row { display: flex; gap: 1rem; }
+.form-row input { flex: 1; }
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form textarea { width: 100%; box-sizing: border-box; }
+.contact-form button { align-self: start; }
+
 /* ============ Responsive ============ */
 @media (min-width: 768px) {
   .project-grid { grid-template-columns: repeat(2, 1fr); }
