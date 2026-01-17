@@ -172,13 +172,37 @@ background-color: #ede8e1;
 .max-w-5xl { max-width: 1400px !important; }
 
 /* ============ Contact Form ============ */
-.contact-form { display: grid; gap: 1rem; }
-.form-row { display: flex; gap: 1rem; }
-.form-row input { flex: 1; }
+.contact-form {
+  display: grid;
+  gap: 1rem;
+  width: 100%;
+}
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  width: 100%;
+}
+.form-row input {
+  width: 100%;
+  box-sizing: border-box;
+}
 .contact-form input[type="text"],
 .contact-form input[type="email"],
-.contact-form textarea { width: 100%; box-sizing: border-box; }
-.contact-form button { align-self: start; }
+.contact-form textarea {
+  width: 100%;
+  box-sizing: border-box;
+}
+.contact-form button {
+  width: auto;
+  margin-top: 0.5rem;
+}
+
+@media (max-width: 768px) {
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+}
 
 /* ============ Responsive ============ */
 @media (min-width: 768px) {
