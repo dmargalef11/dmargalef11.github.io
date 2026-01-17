@@ -91,12 +91,16 @@ body {
   background-color: #000000;
   color: #ede8e1;
 }
-.btn-primary:hover { background-color: #222222; }
+.btn-primary:hover { 
+  background-color: #222222; 
+}
 .btn-secondary {
   background-color: #000000;
   color: #ede8e1;
 }
-.btn-secondary:hover { background-color: #222222; }
+.btn-secondary:hover { 
+  background-color: #222222; 
+}
 
 /* ============ Secciones ============ */
 .section-title { font-size: 2rem; font-weight: 700; margin-bottom: 1.5rem; }
@@ -130,7 +134,7 @@ body {
   font-size: 2rem;
   font-weight: 700;
   margin-bottom: 1.5rem;
-  color: #000000;
+  color: #3d2b1f;
 }
 #sobre-mi p {
   font-size: 1.1rem;
