@@ -174,35 +174,33 @@ background-color: #ede8e1;
 /* ============ Contact Form ============ */
 .contact-form {
   display: grid;
-  gap: 1rem;
+  gap: 1.25rem;
   width: 100%;
-  grid-template-columns: 1fr;
 }
+
 .form-row {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 1rem;
+  gap: 1.25rem;
+}
+
+.form-row input[type="text"] {
   width: 100%;
+  box-sizing: border-box;
 }
-.form-row input {
-  width: 100% !important;
-  box-sizing: border-box !important;
-  display: block !important;
-}
-.contact-form input[type="text"],
+
 .contact-form input[type="email"],
 .contact-form textarea {
-  width: 100% !important;
-  box-sizing: border-box !important;
-  display: block !important;
-  grid-column: 1 / -1;
+  width: 100%;
+  box-sizing: border-box;
 }
+
 .contact-form button {
-  width: auto;
+  width: fit-content;
   margin-top: 0.5rem;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 640px) {
   .form-row {
     grid-template-columns: 1fr;
   }
