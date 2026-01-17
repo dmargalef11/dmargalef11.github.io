@@ -96,7 +96,7 @@ body {
   background-color: #000000;
   color: #ede8e1;
 }
-.btn-secondary:hover { background-color: #d1d1d1; }
+.btn-secondary:hover { background-color: #222222; }
 
 /* ============ Secciones ============ */
 .section-title { font-size: 2rem; font-weight: 700; margin-bottom: 1.5rem; }
