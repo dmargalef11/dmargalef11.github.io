@@ -176,6 +176,7 @@ background-color: #ede8e1;
   display: grid;
   gap: 1rem;
   width: 100%;
+  grid-template-columns: 1fr;
 }
 .form-row {
   display: grid;
@@ -184,14 +185,17 @@ background-color: #ede8e1;
   width: 100%;
 }
 .form-row input {
-  width: 100%;
-  box-sizing: border-box;
+  width: 100% !important;
+  box-sizing: border-box !important;
+  display: block !important;
 }
 .contact-form input[type="text"],
 .contact-form input[type="email"],
 .contact-form textarea {
-  width: 100%;
-  box-sizing: border-box;
+  width: 100% !important;
+  box-sizing: border-box !important;
+  display: block !important;
+  grid-column: 1 / -1;
 }
 .contact-form button {
   width: auto;
