@@ -80,6 +80,7 @@
     </a>
     <nav>
       <a href="#sobre-mi">Sobre mí</a>
+      <a href="#formacion">Formación</a>
       <a href="#proyectos">Proyectos</a>
       <a href="#contacto">Contacto</a>
     </nav>
@@ -92,12 +93,15 @@
         <h1 class="hero-title">David Margalef</h1>
         <p class="hero-subtitle">Desarrollador Junior · Back-End .NET | SQL | Python</p>
         <p class="hero-description">
-          Experiencia en APIs REST con .NET, pipelines de datos (Dagster, Trino) y arquitectura Lakehouse
-          (Iceberg, MinIO). Aprendizaje rápido, comunicación clara y foco en impacto real.
+          Experiencia en APIs REST con .NET, pipelines de datos (ETL) y arquitectura Lakehouse
+          (Iceberg, MinIO, Trino, Dagster, dbt). Aprendizaje rápido, comunicación clara y foco en impacto real.
         </p>
         <div class="hero-buttons">
           <a href="#sobre-mi" class="btn-primary">Sobre mí</a>
           <a href="#proyectos" class="btn-secondary">Proyectos</a>
+        </div>
+        <div class="hero-download" style="margin-top:1.5rem; text-align:center;">
+          <a href="res/davidmargalefCV.pdf" download class="btn-cv" aria-label="Descargar CV en PDF">Descargar CV (PDF)</a>
         </div>
       </div>
   
@@ -139,26 +143,40 @@
   </p>
 </section>
 
+  <!-- Formación -->
+  <section id="formacion" class="max-w-4xl mx-auto py-20 px-6">
+    <h2 class="text-3xl font-bold mb-6">Formación</h2>
+    <div class="grid md:grid-cols-2 gap-8">
+      <div class="bg-white rounded-xl p-6 shadow">
+        <h3 class="text-xl font-semibold">CFGS — Desarrollo de Aplicaciones Multiplataforma (DAM)</h3>
+        <p class="mt-2 text-sm text-[#4a4a4a]">IES Carles Vallbona · 2023–2025 · Contenido: Java, SQL, HTML/CSS, .NET, Kotlin.</p>
+      </div>
+      <div class="bg-white rounded-xl p-6 shadow">
+        <h3 class="text-xl font-semibold">Bachillerato Tecnológico</h3>
+        <p class="mt-2 text-sm text-[#4a4a4a]">IES La Vall del Tenes · 2019-2021 · Orientación tecnológica/química.</p>
+      </div>
+    </div>
+  </section>
 
   <!-- Proyectos -->
   <section id="proyectos" class="py-20 px-6">
     <div class="max-w-4xl mx-auto">
       <h2 class="text-3xl font-bold mb-10">Proyectos</h2>
       <div class="grid md:grid-cols-2 gap-8">
-        <article class="bg-white rounded-xl p-6 shadow hover:shadow-lg transition">
+        <article class="bg-white rounded-xl p-6 shadow hover:shadow-lg transition clickable-card" data-href="https://github.com/dmargalef11/whatatetris" tabindex="0">
           <h3 class="text-xl font-semibold">Unity - Tetris Alternativo</h3>
           <p class="mt-2 text-sm text-[#4a4a4a]">El tetris de toda la vida, con algunas modificaciones. Hecho en Unity</p>
-          <a href="https://github.com/dmargalef11/whatatetris" class="mt-3 inline-block underline text-sm">Ver en GitHub</a>
+          <a href="https://github.com/dmargalef11/whatatetris" class="mt-3 inline-block underline text-sm" target="_blank" rel="noopener">Ver en GitHub</a>
         </article>
-        <article class="bg-white rounded-xl p-6 shadow hover:shadow-lg transition">
+        <article class="bg-white rounded-xl p-6 shadow hover:shadow-lg transition clickable-card" data-href="https://github.com/dmargalef11/APP-JetpackCompose" tabindex="0">
           <h3 class="text-xl font-semibold">Kotlin - App de gestión</h3>
           <p class="mt-2 text-sm text-[#4a4a4a]">App hecha en Kotlin con Jetpack Compose, diseñada para gestionar un albergue, y sus reservas.</p>
-          <a href="https://github.com/dmargalef11/APP-JetpackCompose" class="mt-3 inline-block underline text-sm">Ver en GitHub</a>
+          <a href="https://github.com/dmargalef11/APP-JetpackCompose" class="mt-3 inline-block underline text-sm" target="_blank" rel="noopener">Ver en GitHub</a>
         </article>
-        <article class="bg-white rounded-xl p-6 shadow hover:shadow-lg transition">
+        <article class="bg-white rounded-xl p-6 shadow hover:shadow-lg transition clickable-card" data-href="https://github.com/dmargalef11/SomeApp" tabindex="0">
           <h3 class="text-xl font-semibold">ASP.NET Core (.NET8) + React (TypeScript) - ERP para constructores</h3>
           <p class="mt-2 text-sm text-[#4a4a4a]">Sistema de gestión de inventario y proyectos construido con arquitectura en capas. Backend en C# / .NET 8 utilizando Entity Framework Core. Frontend en React + TypeScript con integración vía Axios y validaciones de reglas de negocio en tiempo real.</p>
-          <a href="https://github.com/dmargalef11/SomeApp" class="mt-3 inline-block underline text-sm">Ver en GitHub</a>
+          <a href="https://github.com/dmargalef11/SomeApp" class="mt-3 inline-block underline text-sm" target="_blank" rel="noopener">Ver en GitHub</a>
         </article>
       </div>
     </div>
@@ -167,7 +185,7 @@
   <!-- Contacto -->
   <section id="contacto" class="max-w-4xl mx-auto py-20 px-6">
     <h2 class="text-3xl font-bold mb-6">¡Contacta conmigo!</h2>
-    <p class="text-[#4a4a4a] mb-6">¿Quieres hablar conmigo? Rellena este formulario.</p>
+    <p class="text-[#4a4a4a] mb-6">¿Quieres hablar conmigo? Rellena este formulario. <a href="res/davidmargalefCV.pdf" download class="cv-link">Descarga mi CV (PDF)</a></p>
     <form action="https://api.web3forms.com/submit" method="POST" onsubmit="handleSubmit(event)" class="contact-form">
       <input type="hidden" name="access_key" value="4338a598-b9e2-4964-abab-f07193459fef">
       <div class="form-row">
@@ -257,6 +275,25 @@
       } else {
         stickyHeader.classList.remove("visible");
       }
+    });
+  </script>
+
+  <script>
+    // Hacer clic en la tarjeta abra el link en una pestaña nueva; respetar enlaces internos
+    document.addEventListener('DOMContentLoaded', function() {
+      document.querySelectorAll('.clickable-card').forEach(function(card) {
+        card.addEventListener('click', function(e) {
+          if (e.target.closest('a')) return; // permitir el comportamiento de enlaces dentro de la tarjeta
+          const url = card.dataset.href;
+          if (url) window.open(url, '_blank');
+        });
+        card.addEventListener('keydown', function(e) {
+          if (e.key === 'Enter') {
+            const url = card.dataset.href;
+            if (url) window.open(url, '_blank');
+          }
+        });
+      });
     });
   </script>
 </body>

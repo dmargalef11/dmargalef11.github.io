@@ -102,6 +102,31 @@ body {
   background-color: #222222; 
 }
 
+/* Botón CV más claro para destacar sin competir con los CTA principales */
+.btn-cv {
+  display: inline-block;
+  padding: 0.6rem 1.25rem;
+  border-radius: 0.375rem;
+  background-color: #efe6dc; /* tono más claro */
+  color: #3d2b1f;
+  border: 1px solid rgba(0,0,0,0.06);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.06);
+  text-decoration: none;
+  transition: background-color 0.2s, box-shadow 0.2s;
+}
+.btn-cv:hover { background-color: #e8dfd3; transform: translateY(-2px); box-shadow: 0 6px 12px rgba(0,0,0,0.12); }
+.btn-cv { transition: transform 0.12s ease, box-shadow 0.12s ease, background-color 0.15s ease; }
+
+.cv-link { color: #3d2b1f; font-weight: 600; text-decoration: underline; }
+.cv-link:hover { color: #111; }
+
+/* Tarjetas de proyecto clicables */
+.clickable-card { cursor: pointer; transition: transform 0.12s ease, box-shadow 0.12s ease; }
+.clickable-card:hover { transform: translateY(-6px); box-shadow: 0 10px 20px rgba(0,0,0,0.12); }
+.clickable-card:focus { outline: 3px solid rgba(61,43,31,0.12); outline-offset: 6px; }
+
+
+
 /* ============ Secciones ============ */
 .section-title { font-size: 2rem; font-weight: 700; margin-bottom: 1.5rem; }
 .section-text { color: #4a4a4a; line-height: 1.75; }
