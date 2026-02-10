@@ -26,18 +26,22 @@ body {
 
 .hero-inner {
   display: grid;
-  grid-template-columns: 1.1fr 0.9fr;  /* dos columnas: texto + foto */
-  gap: 2.5rem;
+  grid-template-columns: 1fr 0.75fr;  /* proporción más equilibrada */
+  gap: 1rem;  /* gap reducido para integración visual */
   width: 68rem;
   max-width: 92vw;
   margin: 0 auto;
   align-items: center;
+  position: relative;
 }
 
 .hero-image {
   display: flex;
   align-items: center;
   justify-content: center;
+  position: relative;
+  margin-left: -3rem;  /* superpone sobre el texto */
+  z-index: 10;
 }
 
 
@@ -48,9 +52,16 @@ body {
   height: auto;
   display: block;
   border-radius: 1rem;
+  object-fit: cover;
+  aspect-ratio: 3 / 4;  /* proporción más vertical para mejorar foco en rostro */
 }
 
 /* Textos */
+.hero-copy {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
 .hero-title {
   font-size: 3rem;
   font-weight: 700;
@@ -245,12 +256,9 @@ background-color: #ede8e1;
     text-align: center;
     gap: 1.25rem;
   }
-
-  /* Orden: primero título, luego imagen, luego descripción */
-  .hero-content { order: 1; }
-  .hero-card   { order: 2; }
-  .hero-buttons{ order: 3; }
-
+  .hero-image {
+    margin-left: 0;  /* elimina superposición en mobile */
+  }
   .hero-card {
     margin: 0 auto;
     max-width: 22rem;
@@ -267,8 +275,8 @@ background-color: #ede8e1;
   border-radius: 1rem;
   overflow: hidden;
   position: relative;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
-  max-width: 20rem;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.2);
+  max-width: 18rem;  /* imagen ligeramente más pequeña */
   margin-left: auto;
 }
 
