@@ -1,15 +1,14 @@
 <!doctype html>
 <html lang="es">
+
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>David Margalef – CV</title>
-  <meta name="description" content="CV online de David Margalef: desarrollador junior con experiencia en .NET, datos (Dagster, Trino, Iceberg) y arquitectura Lakehouse." />
+  <title>David Margalef – Backend & Data Engineer</title>
   <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="icon" href="/favicon.ico" />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
-  <!-- Google Analytics -->
+    <!-- Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-8GR2TTD5V7"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -18,335 +17,338 @@
     gtag('config', 'G-8GR2TTD5V7');
   </script>
   <!-- End Google Analytics -->
-  <script>
-  async function handleSubmit(event) {
-    event.preventDefault();
-    
-    const form = event.target;
-    const button = form.querySelector('button[type="submit"]');
-    const originalButton = button.innerHTML;
-    
-    // Show loading state
-    button.innerHTML = 'Enviando...';
-    button.disabled = true;
-    
-    const formData = new FormData(form);
-    
-    // Remove any existing feedback
-    const existingFeedback = form.nextElementSibling;
-    if (existingFeedback && existingFeedback.classList.contains('form-feedback')) {
-      existingFeedback.remove();
-    }
-    
-    try {
-      const response = await fetch(form.action, {
-        method: 'POST',
-        body: formData,
-      });
-      
-      if (response.ok) {
-        const feedback = document.createElement('div');
-        feedback.className = 'form-feedback bg-green-50 border border-green-200 rounded-xl p-8 text-center mt-6';
-        feedback.innerHTML = `
-          <svg class="w-16 h-16 text-green-500 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-          </svg>
-          <h3 class="text-xl font-bold text-green-800 mb-2">¡Mensaje enviado!</h3>
-          <p class="text-green-700">Gracias por contactar. Te responderé pronto.</p>
-        `;
-        form.parentNode.insertBefore(feedback, form.nextSibling);
-        form.reset();
-        button.innerHTML = originalButton;
-        button.disabled = false;
-      } else {
-        throw new Error('Server error');
-      }
-    } catch (error) {
-      const feedback = document.createElement('div');
-      feedback.className = 'form-feedback bg-red-50 border border-red-200 rounded-xl p-8 text-center mt-6';
-      feedback.innerHTML = `
-        <svg class="w-16 h-16 text-red-500 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
-        </svg>
-        <h3 class="text-xl font-bold text-red-800 mb-2">Error al enviar</h3>
-        <p class="text-red-700 mb-4">Inténtalo de nuevo o envíame un email directo.</p>
-      `;
-      form.parentNode.insertBefore(feedback, form.nextSibling);
-      button.innerHTML = originalButton;
-      button.disabled = false;
-    }
-  }
-</script>
-
-
 </head>
-<body class="bg-[#f5f5dc] text-[#3d2b1f]">
-  <!-- Sticky Header -->
-  <header id="sticky-header">
-    <a href="#top">
 
-      <img src="res/img/logo_DM.png" alt="Logo" style="height:2.5rem; border-radius: 50%;" />
-    </a>
-    <nav>
-      <a href="#sobre-mi">Sobre mí</a>
-      <a href="#formacion">Formación</a>
+<body>
+  <header id="sticky-header">
+    <a href="#top" class="font-bold text-navy-900">David Margalef</a>
+    <nav class="flex gap-6 text-sm font-medium">
+      <a href="#sobre-mi" class="hover:text-blue-600">Sobre mí</a>
+      <a href="#stack-tecnologico">Stack</a>
+      <a href="#formacion" class="hover:text-blue-600">Formación</a>
       <a href="#proyectos">Proyectos</a>
       <a href="#contacto">Contacto</a>
     </nav>
   </header>
 
-  <!-- Hero -->
-  <header class="hero hero-spotlight">
+  <section class="hero" id="top">
     <div class="hero-inner">
       <div class="hero-copy">
-        <h1 class="hero-title">David Margalef</h1>
-        <p class="hero-subtitle">Desarrollador Junior · Back-End .NET | SQL | Python</p>
-        <p class="hero-description">
-          Experiencia en APIs REST con .NET, pipelines de datos (ETL) y arquitectura Lakehouse
-          (Iceberg, MinIO, Trino, Dagster, dbt). Aprendizaje rápido, comunicación clara y foco en impacto real.
+        <h1 class="hero-title">Developing <br><span class="text-blue-500">Data Solutions.</span></h1>
+        <p class="hero-subtitle1">David Margalef</p>
+        <p class="hero-subtitle">Desarrollador Junior Back-End .NET | Data Engineer</p>
+        <p class="hero-description text-lg">
+          Especializado en pipelines de datos (ETL), APIs escalables y arquitecturas Lakehouse.
+          Enfocado en proporcionar soluciones para analisis de datos.
         </p>
         <div class="hero-buttons">
-          <a href="#formacion" class="btn-primary">Formación</a>
-          <a href="#proyectos" class="btn-secondary">Proyectos</a>
-        </div>
-        <div class="hero-download" style="margin-top:1.5rem; text-align:center;">
-          <a href="res/text/davidmargalefCV.pdf" download class="btn-cv" aria-label="Descargar CV en PDF">Descargar CV (PDF)</a>
+          <div class="buttons-row">
+            <a href="#proyectos" class="btn-primary">Ver Proyectos</a>
+            <a href="#formacion" class="btn-primary">Ver Formación</a>
+          </div>
+
+          <div class="buttons-row">
+            <a href="res/text/davidmargalefCV.pdf" class="btn-secondary">Descargar CV</a>
+          </div>
         </div>
       </div>
-  
       <div class="hero-image">
-        <div class="hero-card">
-          <img src="res/img/IMG_4584.jpeg" alt="David Margalef" class="profile-hero" />
+        <img id="carousel-img" src="res/img/IMG_13.jpg" alt="David Margalef"
+          class="rounded-2xl shadow-2xl border-4 border-slate-800 w-80 rotate-3 cursor-pointer transition-all duration-500">
+      </div>
+    </div>
+  </section>
+
+  <section id="sobre-mi" class="max-w-4xl mx-auto py-20 px-6">
+    <h2 class="text-3xl font-bold mb-6 text-slate-900">Sobre mí</h2>
+
+    <p class="mt-6 text-lg text-slate-600">
+      Desarrollador Junior especializado en <span class="font-bold text-blue-600">Back-End</span> y
+      <span class="font-bold text-blue-600">Data Engineering</span>. Tras mi formación en DAM, en
+      <a href="https://www.pisos.com" target="_blank"
+        class="font-semibold border-b-2 border-blue-500 hover:text-blue-600 transition-colors">pisos.com</a>
+      trabajé desarrollando <span class="font-semibold text-slate-900">APIs en .NET y Python</span> dentro de un entorno
+      de microservicios con DDD y TDD. Además, participé activamente en la creacion de una arquitectura Lakehouse para
+      el equipo de Data, implementando soluciones de almacenamiento, procesamiento de datos y pipelines <span
+        class="font-semibold text-slate-900">ETL</span> utilizando tecnologías como MinIO, Iceberg, Trino y dbt.
+
+    </p>
+
+    <p class="mt-6 text-lg text-slate-600"> Cuento además con experiencia creando <span
+        class="font-semibold text-slate-900">dashboards analíticos</span> para equipos utilizando <span
+        class="font-semibold text-slate-900">Looker Studio</span> y Metabase. Para ello, realizaba tareas avanzadas de
+      <span class="italic">data filtering</span> y selección mediante consultas <span
+        class="font-semibold text-slate-900">SQL</span> complejas, asegurando que la información fuera accionable y
+      precisa para la toma de decisiones. He presentado estos proyectos a stakeholders, traduciendo métricas técnicas en
+      insights de negocio.
+    </p>
+    <p class="mt-6 text-lg text-slate-600"> Domino el ciclo completo de los datos y aplico principios de <span
+        class="font-semibold text-slate-900">Clean Code</span> y metodologías <span
+        class="font-semibold text-slate-900">Agile</span> en mi día a día, utilizando <span
+        class="font-semibold text-slate-900">Git</span> para control de versiones y colaboración en equipo. Busco
+      proyectos donde la tecnología tenga un impacto real, explorando actualmente nuevas fronteras en Inteligencia
+      Artificial y diseño de APIs escalables. </p>
+  </section>
+
+  <section id="stack-tecnologico" class="bg-white border-y border-slate-200 py-20 px-6">
+    <div class="max-w-5xl mx-auto">
+      <h2 class="text-3xl font-bold mb-12 text-center text-slate-900">Stack Tecnológico</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+        <div class="p-6 bg-slate-50 rounded-xl">
+          <h3 class="font-bold text-navy-900 mb-4 flex items-center gap-2">
+            <span class="w-2 h-2 bg-blue-500 rounded-full"></span> Core Backend
+          </h3>
+          <div class="flex flex-wrap gap-2">
+            <span class="tech-badge-pro">.NET 8</span>
+            <span class="tech-badge-pro">C#</span>
+            <span class="tech-badge-pro">Python</span>
+            <span class="tech-badge-pro">REST APIs</span>
+          </div>
+        </div>
+        <div class="p-6 bg-slate-50 rounded-xl">
+          <h3 class="font-bold text-navy-900 mb-4 flex items-center gap-2">
+            <span class="w-2 h-2 bg-green-500 rounded-full"></span> Data Engineering
+          </h3>
+          <div class="flex flex-wrap gap-2">
+
+            <span class="tech-badge-pro">SQL Server</span>
+            <span class="tech-badge-pro">Dagster</span>
+            <span class="tech-badge-pro">Trino</span>
+            <span class="tech-badge-pro">Iceberg</span>
+            <span class="tech-badge-pro">dbt</span>
+          </div>
+        </div>
+        <div class="p-6 bg-slate-50 rounded-xl">
+          <h3 class="font-bold text-navy-900 mb-4 flex items-center gap-2">
+            <span class="w-2 h-2 bg-purple-500 rounded-full"></span> Cloud & Ops
+          </h3>
+          <div class="flex flex-wrap gap-2">
+            <span class="tech-badge-pro">Google Cloud</span>
+            <span class="tech-badge-pro">AWS</span>
+            <span class="tech-badge-pro">Docker</span>
+            <span class="tech-badge-pro">CI/CD</span>
+            <span class="tech-badge-pro">MinIO</span>
+            <span class="tech-badge-pro">S3</span>
+          </div>
         </div>
       </div>
     </div>
-  </header>
-  
+  </section>
 
-  <!-- Sobre mí -->
-<section id="sobre-mi" class="max-w-4xl mx-auto py-20 px-6">
-  <h2 class="text-3xl font-bold mb-6">Sobre mí</h2>
-  <p class="leading-relaxed text-[#4a4a4a]">
-    Soy desarrollador junior con experiencia en backend y entornos de datos, participando en
-    proyectos reales de desarrollo de APIs y plataformas analíticas. Me considero una persona
-    tranquila, organizada y fácil de integrar en equipos, con buena capacidad para adaptarme a
-    nuevos entornos y aprender rápidamente cuando se trabaja con tecnologías o retos nuevos.
-  </p>
+  <section id="formacion" class="py-20 px-6 bg-slate-50 border-b border-slate-200">
+    <div class="max-w-5xl mx-auto">
+      <div class="grid md:grid-cols-2 gap-16">
 
-  <p class="mt-4 leading-relaxed text-[#4a4a4a]">
-    Tras finalizar el ciclo superior de Desarrollo de Aplicaciones Multiplataforma, trabajé en
-    <a href="https://www.pisos.com"
-    class="font-semibold text-[#3d2b1f]/80 hover:text-black" target="_blank">pisos.com</a>,
-    donde participé en el desarrollo y mantenimiento de pipelines y servicios dentro de una
-    arquitectura Lakehouse, trabajando con tecnologías como .NET, Python, SQL, Dagster,
-    BigQuery, Trino, Iceberg, dbt y almacenamiento S3-compatible. Esta experiencia me permitió
-    comprender el ciclo completo de los datos, desde la ingesta y transformación hasta su consumo
-    por equipos analíticos y aplicaciones.
-  </p>
+        <div>
+          <h2 class="text-2xl font-bold mb-8 text-slate-900 flex items-center gap-3">
+            <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l9-5-9-5-9 5 9 5z"></path>
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M12 14l9-5-9-5-9 5 9 5zm0 0l-9-5 9-5 9 5-9 5z"></path>
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14v7"></path>
+            </svg>
+            Formación Académica
+          </h2>
 
-  <p class="mt-4 leading-relaxed text-[#4a4a4a]">
-    Actualmente sigo orientando mi carrera hacia el desarrollo backend y las plataformas de datos,
-    explorando también aplicaciones de inteligencia artificial y diseño de APIs. Me motiva trabajar
-    en proyectos donde la tecnología tenga impacto real en el producto o en el negocio, y donde
-    pueda seguir creciendo profesionalmente mientras aporto valor desde fases tempranas de los
-    proyectos.
-  </p>
-</section>
+          <div class="space-y-8">
+            <div class="border-l-2 border-blue-600 pl-4">
+              <h3 class="font-bold text-lg">CFGS Desarrollo de Aplicaciones Multiplataforma</h3>
+              <p class="text-blue-600 text-sm font-semibold">IES Carles Vallbona · 2023 – 2025</p>
+              <p class="text-slate-600 mt-2 text-sm">Especialización en Java, SQL, .NET y Kotlin. Enfoque en desarrollo
+                de software robusto y arquitecturas modernas.</p>
+            </div>
 
-  <!-- Formación -->
-  <section id="formacion" class="max-w-4xl mx-auto py-20 px-6">
-    <h2 class="text-3xl font-bold mb-6">Formación</h2>
+            <div class="border-l-2 border-slate-300 pl-4">
+              <h3 class="font-bold text-lg text-slate-700">Bachillerato Tecnológico</h3>
+              <p class="text-slate-500 text-sm font-semibold">IES La Vall del Tenes · 2019 – 2021</p>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <h2 class="text-2xl font-bold mb-8 text-slate-900 flex items-center gap-3">
+            <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z">
+              </path>
+            </svg>
+            Certificaciones y Cursos
+          </h2>
+
+          <ul class="grid grid-cols-1 gap-4">
+            <li class="bg-white p-4 rounded-lg shadow-sm border border-slate-200 flex justify-between items-center">
+              <div>
+                <p class="font-bold text-slate-800">Google Cloud Digital Leader</p>
+                <p class="text-xs text-slate-500 italic">Google Cloud Platform (GCP)</p>
+              </div>
+              <span class="text-[10px] font-bold bg-blue-100 text-blue-700 px-2 py-1 rounded">PRÓXIMAMENTE</span>
+            </li>
+            <li class="bg-white p-4 rounded-lg shadow-sm border border-slate-200 flex justify-between items-center">
+              <div>
+                <p class="font-bold text-slate-800">AWS Cloud Practitioner</p>
+                <p class="text-xs text-slate-500 italic">Amazon Web Services</p>
+              </div>
+            </li>
+            <li class="bg-white p-4 rounded-lg shadow-sm border border-slate-200 flex justify-between items-center">
+              <div>
+                <p class="font-bold text-slate-800">Databricks Lakehouse Fundamentals</p>
+                <p class="text-xs text-slate-500 italic">Databricks Academy</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section id="proyectos" class="py-24 px-6 max-w-5xl mx-auto">
+    <h2 class="text-3xl font-bold mb-12">Proyectos Seleccionados</h2>
     <div class="grid md:grid-cols-2 gap-8">
-<div class="bg-white rounded-xl p-6 shadow md:col-span-2">
-        <h3 class="text-xl font-semibold">Prácticas — HabitatSoft (pisos.com)</h3>
-        <p class="mt-2 text-sm text-[#4a4a4a]">Durante mis prácticas en HabitatSoft participé en el desarrollo y mantenimiento de funcionalidades en <strong>.NET</strong>, integré APIs externas y trabajé con bases de datos <strong>SQL</strong>. Además, me encargué de optimizar consultas, escribir pruebas y documentación técnica, y colaborar en sprints con metodologías ágiles.</p>
-        <ul class="mt-3 text-sm text-[#4a4a4a] list-disc list-inside">
-          <li>Desarrollo de funcionalidades en C# / .NET</li>
-          <li>Integración con APIs REST y servicios externos</li>
-          <li>Consultas, optimización y modelado en SQL</li>
-          <li>Pruebas automatizadas y documentación técnica</li>
-          <li>Participación en equipo y procesos ágiles (sprints, code reviews)</li>
-        </ul>
-      </div>
+      <article class="p-8 rounded-2xl clickable-card" data-href="https://github.com/dmargalef11/SomeApp">
+        <span class="text-xs font-bold text-blue-600 uppercase">Fullstack ERP</span>
+        <h3 class="text-xl font-bold mt-2">Gestión para Constructoras</h3>
+        <p class="text-slate-600 mt-4 text-sm">Arquitectura en capas con .NET 8 y React. Implementación de reglas de
+          negocio complejas y validación de datos en tiempo real.</p>
+        <div class="mt-6 flex gap-2">
+          <span class="text-[10px] bg-slate-100 px-2 py-1 rounded">Entity Framework</span>
+          <span class="text-[10px] bg-slate-100 px-2 py-1 rounded">TypeScript</span>
+        </div>
+      </article>
 
-      <div class="bg-white rounded-xl p-6 shadow">
-        <h3 class="text-xl font-semibold">CFGS — Desarrollo de Aplicaciones Multiplataforma (DAM)</h3>
-        <p class="mt-2 text-sm text-[#4a4a4a]">IES Carles Vallbona · 2023–2025 · Contenido: Java, SQL, HTML/CSS, .NET, Kotlin.</p>
-      </div>
-      <div class="bg-white rounded-xl p-6 shadow">
-        <h3 class="text-xl font-semibold">Bachillerato Tecnológico</h3>
-        <p class="mt-2 text-sm text-[#4a4a4a]">IES La Vall del Tenes · 2019-2021 · Orientación tecnológica/química.</p>
-      </div>
-      
+      <article class="p-8 rounded-2xl clickable-card" data-href="https://github.com/dmargalef11/APP-JetpackCompose">
+        <span class="text-xs font-bold text-green-600 uppercase">Mobile App</span>
+        <h3 class="text-xl font-bold mt-2">Sistema de Reservas Kotlin</h3>
+        <p class="text-slate-600 mt-4 text-sm">Aplicación móvil nativa para gestión de albergues utilizando Jetpack
+          Compose y Clean Architecture.</p>
+        <div class="mt-6 flex gap-2">
+          <span class="text-[10px] bg-slate-100 px-2 py-1 rounded">Kotlin</span>
+          <span class="text-[10px] bg-slate-100 px-2 py-1 rounded">Jetpack Compose</span>
+        </div>
+      </article>
     </div>
   </section>
 
-  <!-- Stack tecnológico -->
-  <section id="stack-tecnologico" class="max-w-4xl mx-auto py-12 px-6">
-    <h2 class="text-2xl font-bold mb-4">Stack tecnológico</h2>
-    <p class="text-[#4a4a4a] mb-4">Herramientas y tecnologías destacadas:</p>
-    <div class="tech-badges">
-      
-      <span class="tech-badge">.NET</span>
-      <span class="tech-badge">SQL</span>
-      <span class="tech-badge">C#</span>
-      <span class="tech-badge">Java</span>
-      <span class="tech-badge">Python</span>
-      <span class="tech-badge">Kotlin</span>
-      <span class="tech-badge">Docker</span>
-      <span class="tech-badge">SQL Server</span>
-      <span class="tech-badge">React</span>
-      <span class="tech-badge">Trino</span>
-      <span class="tech-badge">Iceberg</span>
-      <span class="tech-badge">CI/CD</span>
-      <span class="tech-badge">Dagster</span>
-      <span class="tech-badge">APIs REST</span>
-      <span class="tech-badge">Microservicios</span>
-      <span class="tech-badge">Agile / Scrum</span>
-      <span class="tech-badge">HTML / CSS</span>
+  <section id="contacto" class="py-24 bg-slate-900 text-white px-6 text-center">
+    <div class="max-w-2xl mx-auto">
+      <h2 class="text-4xl font-bold mb-4">¿Hablamos?</h2>
+      <p class="text-slate-400 mb-12">Disponible para nuevos retos en Backend o Data Engineering.</p>
+
+      <form id="contact-form" class="grid gap-4">
+        <input type="hidden" name="access_key" value="4338a598-b9e2-4964-abab-f07193459fef">
+
+        <input type="hidden" name="from_name" value="Portfolio David Margalef">
+        <input type="hidden" name="subject" value="🚀 Nuevo contacto de reclutador">
+
+        <div class="grid md:grid-cols-2 gap-4">
+          <input type="text" name="name" placeholder="Nombre" required
+            class="bg-slate-800 border-none rounded-lg p-4 text-white focus:ring-2 focus:ring-blue-500">
+          <input type="email" name="email" placeholder="Email" required
+            class="bg-slate-800 border-none rounded-lg p-4 text-white focus:ring-2 focus:ring-blue-500">
+        </div>
+
+        <textarea name="message" placeholder="Tu mensaje..." rows="4" required
+          class="bg-slate-800 border-none rounded-lg p-4 text-white focus:ring-2 focus:ring-blue-500"></textarea>
+
+        <button type="submit" id="submit-btn"
+          class="bg-blue-600 hover:bg-blue-700 p-4 rounded-lg font-bold transition text-white">
+          Enviar Mensaje
+        </button>
+
+        <div id="form-result" class="mt-4 text-center hidden"></div>
+      </form>
     </div>
   </section>
 
-  <!-- Proyectos -->
-  <section id="proyectos" class="py-20 px-6">
-    <div class="max-w-4xl mx-auto">
-      <h2 class="text-3xl font-bold mb-10">Proyectos</h2>
-      <div class="grid md:grid-cols-2 gap-8">
-
-        <article class="bg-white rounded-xl p-6 shadow hover:shadow-lg transition clickable-card" data-href="https://github.com/dmargalef11/SomeApp" tabindex="0">
-          <h3 class="text-xl font-semibold">ASP.NET Core (.NET8) + React (TypeScript) - ERP para constructores</h3>
-          <p class="mt-2 text-sm text-[#4a4a4a]">Sistema de gestión de inventario y proyectos construido con arquitectura en capas. Backend en C# / .NET 8 utilizando Entity Framework Core. Frontend en React + TypeScript con integración vía Axios y validaciones de reglas de negocio en tiempo real.</p>
-          <a href="https://github.com/dmargalef11/SomeApp" class="mt-3 inline-block underline text-sm" target="_blank" rel="noopener">Ver en GitHub</a>
-        </article>
-        <article class="bg-white rounded-xl p-6 shadow hover:shadow-lg transition clickable-card" data-href="https://github.com/dmargalef11/APP-JetpackCompose" tabindex="0">
-          <h3 class="text-xl font-semibold">Kotlin - App de gestión</h3>
-          <p class="mt-2 text-sm text-[#4a4a4a]">App hecha en Kotlin con Jetpack Compose, diseñada para gestionar un albergue, y sus reservas.</p>
-          <a href="https://github.com/dmargalef11/APP-JetpackCompose" class="mt-3 inline-block underline text-sm" target="_blank" rel="noopener">Ver en GitHub</a>
-        </article>
-        <article class="bg-white rounded-xl p-6 shadow hover:shadow-lg transition clickable-card" data-href="https://github.com/dmargalef11/whatatetris" tabindex="0">
-          <h3 class="text-xl font-semibold">Unity - Tetris Alternativo</h3>
-          <p class="mt-2 text-sm text-[#4a4a4a]">El tetris de toda la vida, con algunas modificaciones. Hecho en Unity</p>
-          <a href="https://github.com/dmargalef11/whatatetris" class="mt-3 inline-block underline text-sm" target="_blank" rel="noopener">Ver en GitHub</a>
-        </article>
-        
-        
-      </div>
-    </div>
-  </section>
-
-  <!-- Contacto -->
-  <section id="contacto" class="max-w-4xl mx-auto py-20 px-6">
-    <h2 class="text-3xl font-bold mb-6">¡Contacta conmigo!</h2>
-    <p class="text-[#4a4a4a] mb-6">¿Quieres hablar conmigo? Rellena este formulario. <a href="res/text/davidmargalefCV.pdf" download class="cv-link">Descarga mi CV (PDF)</a></p>
-    <form action="https://api.web3forms.com/submit" method="POST" onsubmit="handleSubmit(event)" class="contact-form">
-      <input type="hidden" name="access_key" value="4338a598-b9e2-4964-abab-f07193459fef">
-      <div class="form-row">
-        <input type="text" name="nombre" placeholder="Tu nombre" class="border rounded-md px-4 py-2" required>
-        <input type="text" name="empresa" placeholder="Tu empresa" class="border rounded-md px-4 py-2">
-      </div>
-      <div>
-        <input type="email" name="email" placeholder="Tu email" class="border rounded-md px-4 py-2 w-full box-border" required>
-      </div>
-      <div>
-        <textarea name="mensaje" rows="4" placeholder="Escribe tu mensaje" class="border rounded-md px-4 py-2 w-full box-border" required></textarea>
-      </div>
-      <button type="submit" class="bg-[#3d2b1f] text-[#f5f5dc] px-6 py-2 rounded-md shadow hover:opacity-90">Enviar</button>
-    </form>
-    <div class="mt-6 flex gap-12 justify-around">
-      <a href="https://www.linkedin.com/in/dmargalef" target="_blank" aria-label="LinkedIn">
-        <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="currentColor" class="text-[#0A66C2] hover:text-black transition" viewBox="0 0 16 16">
-          <path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 
-            16 1.146v13.708c0 .633-.526 1.146-1.175 
-            1.146H1.175C.526 16 0 15.487 0 
-            14.854V1.146zM4.943 13.403V6.169H2.542v7.234h2.401zm-1.2-8.229c.837 
-            0 1.358-.554 1.358-1.248-.015-.71-.52-1.248-1.342-1.248C3.94 
-            2.678 3.4 3.216 3.4 3.926c0 .694.52 1.248 
-            1.327 1.248h.016zm4.908 8.229h2.401V9.359c0-.216.016-.432.08-.586.175-.432.573-.878 
-            1.243-.878.876 0 1.228.662 1.228 1.634v3.874h2.4V9.25c0-2.22-1.184-3.252-2.764-3.252-1.28 
-            0-1.845.71-2.165 1.202h.032V6.169H8.651c.03.678 0 7.234 0 7.234z"/>
-        </svg>
-      </a>
-    
-      <!-- GitHub -->
-      <a href="https://github.com/dmargalef11" target="_blank" aria-label="GitHub">
-        <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="currentColor" class="text-black hover:text-gray-700 transition" viewBox="0 0 16 16">
-          <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 
-            2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 
-            0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 
-            1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 
-            0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 
-            0 0 .67-.21 2.2.82a7.65 7.65 0 0 1 2-.27c.68 0 
-            1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 
-            1.1.16 1.92.08 2.12.51.56.82 1.27.82 
-            2.15 0 3.07-1.87 3.75-3.65 
-            3.95.29.25.54.73.54 1.48 0 1.07-.01 
-            1.93-.01 2.2 0 .21.15.46.55.38A8.013 
-            8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"/>
-        </svg>
-      </a>
-      
-      
-        <!-- WhatsApp -->
-        <a href="https://wa.me/34695075296" target="_blank" aria-label="WhatsApp">
-          <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="currentColor" class="text-green-500 hover:text-black transition" viewBox="0 0 16 16">
-            <path d="M13.601 2.326A7.854 7.854 0 0 
-              0 8.004.168a7.925 7.925 0 0 0-6.82 
-              11.882L.165 15.838l3.858-1.01a7.928 
-              7.928 0 0 0 11.913-6.794 7.884 
-              7.884 0 0 0-2.335-5.708zM8.004 
-              14.58a6.575 6.575 0 0 
-              1-3.356-.92l-.24-.144-2.288.6.61-2.229-.156-.229a6.56 
-              6.56 0 0 1-1.01-3.515c0-3.626 
-              2.957-6.584 6.62-6.584 1.77 0 
-              3.431.687 4.683 1.933a6.537 6.537 0 0 
-              1 1.938 4.67c0 3.627-2.957 
-              6.584-6.621 
-              6.584zm3.61-4.935c-.197-.099-1.167-.577-1.348-.642-.18-.066-.312-.099-.443.099-.131.197-.506.642-.62.774-.115.132-.23.148-.427.05-.197-.099-.832-.307-1.586-.979a5.93 
-              5.93 0 0 1-1.096-1.338c-.115-.197-.012-.304.086-.403.089-.088.197-.23.295-.345.099-.115.132-.197.197-.33.066-.132.033-.248-.016-.347-.05-.099-.443-1.07-.607-1.465-.16-.38-.323-.328-.443-.334-.115-.006-.248-.007-.38-.007a.73.73 
-              0 0 0-.53.248c-.18.197-.693.678-.693 
-              1.653s.71 1.917.81 2.049c.099.132 
-              1.402 2.14 3.397 3.002.476.205.846.327 
-              1.135.418.477.152.91.131 
-              1.252.08.382-.057 1.167-.477 
-              1.333-.94.164-.464.164-.861.115-.94-.049-.082-.18-.131-.377-.23z"/>
-          </svg>
-        </a>
-    </div>
-  </section>
-
-  <footer class="text-center py-8 text-sm text-[#4a4a4a] bg-[#ede8e1]">
-    © <span id="y"></span> David Margalef · <a href="mailto:david.margalef.pardos@gmail.com" class="underline">david.margalef.pardos@gmail.com</a>
+  <footer>
+    <p>© <span id="y"></span> David Margalef · Backend & Data Engineering</p>
   </footer>
 
-  <script>document.getElementById('y').textContent = new Date().getFullYear()</script>
   <script>
-    const stickyHeader = document.getElementById("sticky-header");
-    window.addEventListener("scroll", function() {
-      if(window.scrollY > 500) { // adjust threshold as needed
-        stickyHeader.classList.add("visible");
-      } else {
-        stickyHeader.classList.remove("visible");
-      }
-    });
-  </script>
+    document.getElementById('y').textContent = new Date().getFullYear();
+    const header = document.getElementById("sticky-header");
+    window.onscroll = () => { window.scrollY > 400 ? header.classList.add("visible") : header.classList.remove("visible"); };
 
-  <script>
-    // Hacer clic en la tarjeta abra el link en una pestaña nueva; respetar enlaces internos
-    document.addEventListener('DOMContentLoaded', function() {
-      document.querySelectorAll('.clickable-card').forEach(function(card) {
-        card.addEventListener('click', function(e) {
-          if (e.target.closest('a')) return; // permitir el comportamiento de enlaces dentro de la tarjeta
-          const url = card.dataset.href;
-          if (url) window.open(url, '_blank');
-        });
-        card.addEventListener('keydown', function(e) {
-          if (e.key === 'Enter') {
-            const url = card.dataset.href;
-            if (url) window.open(url, '_blank');
-          }
-        });
-      });
+    document.querySelectorAll('.clickable-card').forEach(card => {
+      card.onclick = () => window.open(card.dataset.href, '_blank');
     });
+
+    const form = document.getElementById('contact-form');
+    const result = document.getElementById('form-result');
+    const submitBtn = document.getElementById('submit-btn');
+
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      const formData = new FormData(form);
+      const object = Object.fromEntries(formData);
+      const json = JSON.stringify(object);
+
+      result.classList.remove('hidden');
+      result.textContent = "Enviando...";
+      result.className = "mt-4 text-center text-blue-400";
+      submitBtn.disabled = true;
+
+      fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: json
+      })
+        .then(async (response) => {
+          let json = await response.json();
+          if (response.status == 200) {
+            result.textContent = "✔ Enviado con éxito. ¡Hablamos pronto!";
+            result.className = "mt-4 text-center text-green-500 font-bold";
+            form.reset();
+          } else {
+            console.log(response);
+            result.textContent = "Hubo un error. Inténtalo de nuevo.";
+            result.className = "mt-4 text-center text-red-500";
+          }
+        })
+        .catch(error => {
+          console.log(error);
+          result.textContent = "Parece que hay un problema de conexión.";
+        })
+        .then(function () {
+          submitBtn.disabled = false;
+          setTimeout(() => {
+            result.classList.add('hidden');
+          }, 5000);
+        });
+    });
+
+    // Configuración del carrusel
+      const images = [
+        'res/img/IMG_13.jpg',
+        'res/img/IMG_10.jpeg',
+        'res/img/IMG_12.jpg'
+        
+      ];
+
+      let currentIndex = 0;
+      const imgElement = document.getElementById('carousel-img');
+
+      imgElement.addEventListener('click', () => {
+        // Efecto de salida (opcional)
+        imgElement.style.opacity = '0';
+        imgElement.style.transform = 'scale(0.9) rotate(0deg)';
+
+        setTimeout(() => {
+          // Cambiar el índice
+          currentIndex = (currentIndex + 1) % images.length;
+
+          // Cambiar la fuente
+          imgElement.src = images[currentIndex];
+
+          // Efecto de entrada
+          imgElement.style.opacity = '1';
+          imgElement.style.transform = 'scale(1) rotate(3deg)';
+        }, 200); // Tiempo que tarda en "desvanecerse"
+      });
   </script>
 </body>
+
 </html>
