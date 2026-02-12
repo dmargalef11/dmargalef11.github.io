@@ -204,3 +204,25 @@ footer {
   color: #94a3b8;
   padding: 3rem 1rem;
 }
+
+/* Mobile: usar la imagen del hero como fondo con opacidad 20% */
+@media (max-width: 900px) {
+  /* Ocultamos la etiqueta <img> para evitar duplicados */
+  .hero-image { display: none; }
+
+  /* Pseudo-elemento que coloca la imagen de fondo con 20% de opacidad */
+  .hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: url('res/img/herramientas-de-big-data.jpg');
+    background-size: cover;
+    background-position: center;
+    opacity: 0.2;
+    z-index: 0;
+    pointer-events: none;
+  }
+
+  /* Asegurar que el contenido quede por encima del fondo */
+  .hero-inner { position: relative; z-index: 10; }
+}
