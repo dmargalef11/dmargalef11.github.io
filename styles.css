@@ -198,6 +198,36 @@ body {
 
 #sticky-header.visible { display: flex; }
 
+/* Header nav: icon + text layout */
+#sticky-header nav a.nav-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: inherit;
+  text-decoration: none;
+  padding: 0.35rem 0.5rem;
+  border-radius: 6px;
+}
+
+#sticky-header nav a.nav-link:hover {
+  color: #2563eb;
+  background: rgba(37,99,235,0.06);
+}
+
+#sticky-header .nav-icon svg {
+  width: 20px;
+  height: 20px;
+  display: block;
+}
+
+/* Mobile: reemplazar texto por iconos para evitar overflow */
+@media (max-width: 900px) {
+  #sticky-header { padding: 0.5rem 1rem; }
+  #sticky-header nav { gap: 0.5rem; }
+  #sticky-header nav a.nav-link { padding: 0.35rem; }
+  #sticky-header nav a.nav-link .nav-text { display: none; }
+}
+
 /* ============ FOOTER ============ */
 footer {
   background: #0f172a;
